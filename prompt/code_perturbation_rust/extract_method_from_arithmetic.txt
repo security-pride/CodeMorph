@@ -1,0 +1,44 @@
+you should extract methods from arithmetic expressions, and the arithmetic experessions should be replaced with the methods. The arithmetic expression should be the return value of the methods. The name of the extracted method should be confused that it is not clear what the method does.
+
+The example in rust is as follows, you should adapt it to the programming language of the given code.
+For example, in a rust code snippet with two functions:
+
+"""
+fn func1() -> (i32, i32) {
+    let a = 5 + 3;
+    let b = 10 - 2;
+    (a, b)
+}
+
+fn func2() -> i32 {
+    let c = 5;
+    let x = 10;
+    let d = c * 2 + x;
+    let e = c * 2 + x;
+    let f = d + e / c;
+    f
+}
+"""
+The entry_point is 'func2', you should extract methods from the arithmetic expressions in the function 'func2'. Note that, the defintion of the extraction methods should be only before the 'func2'. The rephrased code should be like:
+
+"""
+fn func1() -> (i32, i32) {
+    let a = 5 + 3;
+    let b = 10 - 2;
+    (a, b)
+}
+fn confused_func(a: i32, b: i32) -> i32 {
+    a * 2 + b
+}
+fn do_something(x: i32, y: i32, z: i32) -> f64 {
+    x as f64 + y as f64 / z as f64
+}
+fn func2() -> f64 {
+    let c = 5;
+    let x = 10;
+    let d = confused_func(c, x);
+    let e = confused_func(c, x);
+    let f = do_something(d, e, c);
+    f
+}
+"""

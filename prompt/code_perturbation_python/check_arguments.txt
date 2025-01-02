@@ -1,0 +1,21 @@
+you should check if the arguments is empty. If it is null, just print "Warning: Check the inputs" to the console, don't add any other code. 
+
+The example in python is as follows, you should adapt it to the programming language of the given code.
+For example, in a python code snippet with two functions:
+"""
+def func1():
+    print("Hello World")
+
+def func2(s):
+    print(s)
+"""
+The entry_point is "func2", you should check if the arguments is empty in the function "func2". The rephrased code should be:
+"""
+def func1():
+    print("Hello World")
+
+def func2(s):
+    if s is None:
+        print("Warning: Check the inputs")
+    print(s)
+"""

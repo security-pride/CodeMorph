@@ -1,0 +1,76 @@
+you should swap the sides of the boolean expression which are"<", ">", "==", "<=", ">=". The boolean expression may be contained in the if statement, while statement, or any other statement. You must follow the change rule to swap the sides of the boolean expression.
+
+The change rule is as follows using the pseudocode, you should adapt it to the programming language of the given code.:
+1. var1 > var2 should be transformed to var2 < var1
+2. var1 >= var2 should be transformed to var2 <= var1
+3. var1 == var2 should be transformed to var2 == var1
+4. var1 <= var2 should be transformed to var2 >= var1
+5. var1 < var2 should be transformed to var2 > var1
+6. var1 != var2 should be transformed to var2 != var1
+
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+
+void func1() {
+    int a = 5;
+    int b = 10;
+    if (a > b) {
+        std::cout << "a is greater than b" << std::endl;
+    } else {
+        std::cout << "b is greater than a" << std::endl;
+    }
+}
+
+void func2() {
+    int c = 5;
+    int d = 10;
+    if (c == d) {
+        std::cout << "c is equal to d" << std::endl;
+    }
+    if (c >= 0) {
+        std::cout << "c is greater than or equal to d" << std::endl;
+    }
+
+    while (d != c) {
+        int i = 5;
+        while (i < 10) {
+            i += 1;
+        }
+        d -= 1;
+    }
+}
+   """ 
+The entry_point is 'func2', you should change the boolean expression in the function 'func2'.  The rephrased code should be like:
+"""
+#include <iostream>
+
+void func1() {
+    int a = 5;
+    int b = 10;
+    if (a > b) {
+        std::cout << "a is greater than b" << std::endl;
+    } else {
+        std::cout << "b is greater than a" << std::endl;
+    }
+}
+
+void func2() {
+    int c = 5;
+    int d = 10;
+    if (d == c) {
+        std::cout << "c is equal to d" << std::endl;
+    }
+    if (c >= 0) {
+        std::cout << "c is greater than or equal to d" << std::endl;
+    }
+
+    while (c != d) {
+        int i = 5;
+        while (i < 10) {
+            i += 1;
+        }
+        d -= 1;
+    }
+}
+"""

@@ -1,0 +1,42 @@
+you should insert junk function code that won't be executed, the added functions that are never called. 
+
+In the insert junk function, there can be various control flow statements such as "exit()", "return", and "break", the function name should be accordingly.
+
+If the code is cpp or java, you should insert junk anonymous functions. 
+
+The example in go is as follows, you should adapt it to the programming language of the given code.
+For example, in a go code snippet with two functions:
+"""
+func func1() int {
+    a := 5
+    return a
+}
+
+func func2() int {
+    b := 10
+    fmt.Println(b)
+    c := b + 1
+    return c
+
+"""
+The entry_point is 'func2', you should insert junk code in the function 'func2'. The rephrased code can be:
+
+"""
+func func1() int {
+    a := 5
+    return a
+}
+
+func func2() int {
+    b := 10
+
+    exitProcess := func() {
+        os.Exit(0)
+    }
+
+    fmt.Println(b)
+    c := b + 1
+    return c
+}
+"""
+That function 'exitProcess' is not called in the code.

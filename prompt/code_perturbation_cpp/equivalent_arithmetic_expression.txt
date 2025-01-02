@@ -1,0 +1,39 @@
+you should change the arithmetic computation or arithmetic assignment equivalently by adding and then minusing the same type number in the arithmetic expression such as "+ 3 -3". Note that, you can only change the arithmetic computation or arithmetic assignment which like 'a = 4', 'a = 5*3', 'b = 4.3', 'a = 6/2', 'a = 4 - 3' that only includes numeric constants.
+
+The example in cpp is as follows, you should adapt it to the programming language of the given code.
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+
+int func1() {
+    int a = 5;
+    return a;
+}
+
+void func2() {
+    int b = 10;
+    double c = 5.1;
+    int d = func1();
+
+    std::cout << b << std::endl;
+    std::cout << c << std::endl;
+}
+"""
+The entry_point is 'func2', you should change the arithmetic expression in the function 'func2'. In 'func2', the variable 'b' is equivalent 10, and you can add 3 and minus 3 to 'b'.  The rephrased code can be like:
+"""
+#include <iostream>
+
+int func1() {
+    int a = 5;
+    return a;
+}
+
+void func2() {
+    int b = 10 + 3 - 3;
+    double c = 5.1 + 1 - 1;
+    int d = func1();
+
+    std::cout << b << std::endl;
+    std::cout << c << std::endl;
+}
+"""

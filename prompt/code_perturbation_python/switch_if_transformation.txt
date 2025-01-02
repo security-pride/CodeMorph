@@ -1,0 +1,58 @@
+please transform "switch"/"match" structure to "if" statement. The format is as follows, you should adapt it to the programming language of the given code.
+The "match" structure to "if" statement transformation should be like:
+"""
+match value:
+    case condition1:
+        body1
+    case condition2:
+        body2
+    case _:
+        body3
+"""
+After transformation, the pseudocode should be like:
+"""
+if value == condition1:
+    body1
+elif value == condition2:
+    body2
+else:
+    body3
+"""
+For example, in a python code snippet with two functions:
+"""
+def func1():
+    a = 1
+    if a == 1:
+        print("Hello World")
+    else:
+        print("Goodbye World")
+
+def func2():
+    value = 1
+    match value:
+        case 1:
+            print("One")
+        case 2:
+            print("Two")
+        case _:
+            print("Invalid")
+"""
+
+entry_point is 'func2', you should transform the code in the function 'func2'. The rephrased code should be like:
+"""
+def func1():
+    a = 1
+    if a == 1:
+        print("Hello World")
+    else:
+        print("Goodbye World")
+
+def func2():
+    value = 1
+    if value == 1:
+        print("One")
+    elif value == 2:
+        print("Two")
+    else:
+        print("Invalid")
+"""

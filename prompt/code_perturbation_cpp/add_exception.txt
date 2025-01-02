@@ -1,0 +1,21 @@
+you should add exception handling blocks. The exception handling block should catch the exception of the given exception_type and print the exception message to the console. The exception handling block should be added at the positions where code can go wrong. 
+
+The format in cpp is as follows, you should adapt it to the programming language of the given code.
+
+The original cpp code block is:
+"""
+codeA
+codeB
+"""
+Adn if the codeA is the position where code can go wrong, then you add the exception handling block should be added in the following format:
+"""
+try {
+    codeA
+} catch (const exception_type& e) {
+    std::cout << e.what() << std::endl;
+}
+
+codeB
+"""
+
+The exception_type is the type of the exception that you should catch.

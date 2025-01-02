@@ -1,0 +1,75 @@
+you should extract methods from 'if' statement. The following explains the rules to extract the method from the 'if' statement which is in go, you should adapt it to the programming language of the given code:
+The 'if' statement in the go is as:
+"""
+func funcExample() {
+    if conditionA {
+        bodyA
+    } else {
+        bodyB
+    }
+}
+"""
+We assume that there are variables x and y in the conditionA expression, then you should change the code into:
+"""
+func randomName(a, b int) bool {
+    return conditionA
+}
+
+func funcExample() {
+    if randomName(x, y) {
+        bodyA
+    } else {
+        bodyB
+    }
+}
+
+"""
+Note that, the arguments name of the extracted method should be different from the variables in the conditionA expression. The name of the extracted method should be confused that it is not clear what the method does.
+
+For example, in a python code snippet with two functions:
+"""
+import "fmt"
+
+func func1() int {
+    a := 1
+    return a
+}
+
+func func2() {
+    a := 10
+    b := 2
+    c := "It is a string"
+
+    if a%2 != 0 && b > 2 && c != "" {
+        fmt.Println("Hello World")
+    } else {
+        fmt.Println("Goodbye World")
+    }
+}
+"""
+The entry_point is 'func2', you should extract the method from the if statement in the function 'func2'. Assuming the extracted method name if do_computation, the rephrased code can be like:
+
+"""
+import "fmt"
+
+func func1() int {
+    a := 1
+    return a
+}
+
+func doComputation(x, y int, z string) bool {
+    return x%2 != 0 && y > 2 && z != ""
+}
+
+func func2() {
+    a := 10
+    b := 2
+    c := "It is a string"
+
+    if doComputation(a, b, c) {
+        fmt.Println("Hello World")
+    } else {
+        fmt.Println("Goodbye World")
+    }
+}
+"""

@@ -1,0 +1,74 @@
+please transform "switch"/"match" structure to "if" statement. The format is as follows, you should adapt it to the programming language of the given code.
+The "switch" structure to "if" statement transformation should be like:
+"""
+switch(value) {
+    case condition1:
+        body1
+    case condition2:
+        body2
+    default:
+        body3
+}
+"""
+After transformation, the pseudocode should be like:
+"""
+if (value == condition1) {
+    body1
+} else if (value == condition2) {
+    body2
+} else {
+    body3
+}
+"""
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+using namespace std;
+void func1 (){
+    int a = 1;
+    if (a == 1){
+        print("Hello World");
+    } else {
+        print("Goodbye World");
+    }
+}
+
+void func2(){
+    int value = 1;
+    switch (value) {
+        case 1:
+            cout << "One" << endl;
+            break;
+        case 2:
+            cout << "Two" << endl;
+            break;
+        default:
+            cout << "Invalid" << endl;
+    }
+}
+"""
+
+entry_point is 'func2', you should transform the code in the function 'func2'. The rephrased code should be like:
+"""
+#include <iostream>
+using namespace std;
+void func1 (){
+    int a = 1;
+    if (a == 1){
+        print("Hello World");
+    } else {
+        print("Goodbye World");
+    }
+}
+
+void func2(){
+    int value = 1;
+    if (value == 1) {
+        cout << "One" << endl;
+    } else if (value == 2) {
+        cout << "Two" << endl;
+    } else {
+        cout << "Invalid" << endl;
+    }
+}
+"""

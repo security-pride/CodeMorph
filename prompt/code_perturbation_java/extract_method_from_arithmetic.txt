@@ -1,0 +1,47 @@
+you should extract methods from arithmetic expressions, and the arithmetic experessions should be replaced with the methods. The arithmetic expression should be the return value of the methods. The name of the extracted method should be confused that it is not clear what the method does.
+
+The example in java is as follows, you should adapt it to the programming language of the given code.
+For example, in a java code snippet with two functions:
+
+"""
+    public static int[] func1() {
+        int a = 5 + 3;
+        int b = 10 - 2;
+        return new int[]{a, b};
+    }
+
+    public static double func2() {
+        int c = 5;
+        int x = 10;
+        int d = c * 2 + x;
+        int e = c * 2 + x;
+        double f = d + e / (double)c;
+        return f;
+    }
+"""
+The entry_point is 'func2', you should extract methods from the arithmetic expressions in the function 'func2'. Note that, the defintion of the extraction methods should be only before the 'func2'. The rephrased code should be like:
+
+"""
+    public static int[] func1() {
+        int a = 5 + 3;
+        int b = 10 - 2;
+        return new int[]{a, b};
+    }
+
+    public static int confusedFunc(int a, int b) {
+        return a * 2 + b;
+    }
+
+    public static double doSomething(int x, int y, int z) {
+        return x + (double)y / z;
+    }
+
+    public static double func2() {
+        int c = 5;
+        int x = 10;
+        int d = confusedFunc(c, x);
+        int e = confusedFunc(c, x);
+        double f = doSomething(d, e, c);
+        return f;
+    }
+"""

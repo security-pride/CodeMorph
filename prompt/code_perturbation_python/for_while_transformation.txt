@@ -1,0 +1,57 @@
+please transform for loop to 'while' loop and while loop to 'for' loop. You should transform all the loops in the function. In Python and Rust, do not change the unlimited loop such as 'while true','while 1'.
+
+The transformation rule with pseudocode is in python, you should adapt it to the programming language of the given code:
+1. for loop to while loop:
+The for loop to while loop transformation should be like:
+"""
+for i in range(n):
+    body
+"""
+After transformation, the pseudocode should be like:
+"""
+i = 0;
+while i < n:
+    body
+    i++;
+"""
+2. while loop to for loop:
+The while loop to for loop transformation should be like:
+"""
+i = 0;
+while i < n:
+    body
+    i++;
+"""
+After transformation, the pseudocode should be like:
+"""
+for i in range(n):
+    body
+"""
+For example, in a python code snippet with two functions:
+"""
+def fun1():
+    for i in range(5):
+        print(i)
+def fun2():
+    i = 0
+    while True:
+        print(i)
+        i += 1
+    for j in range(5):
+        print(j)
+"""
+The entry_point is 'fun2', you should transform the loops of the function 'fun2'. The rephrased code should be like:
+"""
+def func1():
+    for i in range(5):
+        print(i)
+    
+def func2():
+    while True:
+        print(i)
+        i += 1
+    j = 0
+    while j < 5:
+        print(j)
+        j += 1
+"""

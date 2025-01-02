@@ -1,0 +1,36 @@
+please change the function name specified by 'entry_point'. I would like the new function name is confused name that it is not clear what the function does. 
+
+Note that, the 'entry_point' and the places where the function is called in the given code should be modified the same as the modified function name.
+
+The example in go is as follows, you should adapt it to the programming language of the given code.
+For example, if there are two go functions:
+if the original code is:
+"""
+func func1() {
+    func2()
+    fmt.Println("Hello World")
+}
+
+func func2() {
+    a := 1
+    b := 2
+    fmt.Println(a + b)
+}
+"""
+
+The entry_point is "func2", assuming the new function name is "addition", the places where the function is called also should be modified, you should check that the all code to modify the name. So we the rephrased code should be:
+
+"""
+func func1() {
+    confusedName()
+    fmt.Println("Hello World")
+}
+
+func confusedName() {
+    a := 1
+    b := 2
+    fmt.Println(a + b)
+}
+"""
+And the entry_point should be modified as the new function name.
+

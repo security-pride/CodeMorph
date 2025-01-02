@@ -1,0 +1,41 @@
+you should add unused arguments to the function signature. The type, number of the added arguments can be arbitrary. The name of arguments should include 'funcarg'.
+
+Note that. 1. You should make sure the added arguments are appended after the existing arguments and they are all unused. 2. You should not add default arguments to the entry_point function unless unless the given code is python or cpp. 3. You should check the code, when the function is called, you should assign the random value in the function call according to the type of the arguments.
+
+The format in go is as follows, you should adapt it to the programming language of the given code.
+For example, in a go code snippet with two functions:
+"""
+package main
+
+import "fmt"
+
+func func1() {
+    s := "It is a string"
+    func2(s)
+    fmt.Println("Hello World")
+}
+
+func func2(s string) {
+    fmt.Println(s)
+}
+"""
+The entry_point is "func2", you should add unused default arguments to the function "func2". Note that, since function "func1" calls function "func2", you should assign the random value in the function call according to the type of the arguments.
+The rephrased code should be:
+"""
+package main
+
+import "fmt"
+
+func func1() {
+    s := "It is a string"
+    func2(s)
+    fmt.Println("Hello World")
+}
+
+func func2(s string) {
+    fmt.Println(s)
+}
+"""
+
+The number of arguments of function "func2" has been added, and the funtion call of "func2" in the function "func1" also assigned the random value of adding arguments funcarg1, funcarg2 , funcarg3 and funcarg4
+

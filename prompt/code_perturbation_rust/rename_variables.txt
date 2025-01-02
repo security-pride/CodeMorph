@@ -1,0 +1,55 @@
+please renaming variables. You only can rename all variables that defined in the function that is the entry point. The function call, key parameters and the external variables should not be changed.
+
+The example in rust is as follows, you should adapt it to the programming language of the given code.
+For example, in a rust code snippet with two functions:
+"""
+fn func1() {
+    let a = 5;
+    let var_str1 = "my string1";
+    my_func(var_str1);
+    my_func2(a, var_str1);
+}
+
+static mut GLOBAL_VAR: i32 = 10;
+
+fn func2() {
+    let b = 5;
+    let var_str2 = "my string2";
+    unsafe {
+        GLOBAL_VAR += 1;
+    }
+    my_func(var_str2);
+    my_func2(GLOBAL_VAR, var_str1);
+}
+
+"""
+
+
+entry_point is 'func2', you should change the variables in the function 'func2'. The rephrased code can be:
+
+"""
+fn func1() {
+    let a = 5;
+    let var_str1 = "my string1";
+    my_func(var_str1);
+    my_func2(a, var_str1);
+}
+
+static mut GLOBAL_VAR: i32 = 10;
+
+fn func2() {
+    let any_int_variables_name = 5;
+    let any_string_variables_name = "my string2";
+    
+    unsafe {
+        GLOBAL_VAR += 1;
+    }
+    
+    my_func(any_string_variables_name);
+    my_func2(GLOBAL_VAR, any_string_variables_name);
+}
+"""
+
+The function call, key parameters and the external variables do not be changed.
+
+The name you choose for the variables should be confused.

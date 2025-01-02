@@ -1,0 +1,77 @@
+please transform for loop to 'while' loop and while loop to 'for' loop. You should transform all the loops in the function. In Python and Rust, do not change the unlimited loop such as 'while true','while 1'.
+
+The transformation rule with pseudocode is in java, you should adapt it to the programming language of the given code:
+1. for loop to while loop:
+The for loop to while loop transformation should be like:
+"""
+for (int i = 0; i < n; i++) {
+    body
+}
+"""
+After transformation, the pseudocode should be like:
+"""
+int i = 0;
+while (i < n) {
+    body
+    i++;
+}
+"""
+2. while loop to for loop:
+The while loop to for loop transformation should be like:
+"""
+int i = 0;
+while (i < n) {
+    body
+    i++;
+}
+"""
+After transformation, the pseudocode should be like:
+"""
+for (int i = 0; i < n; i++) {
+    body
+}
+"""
+For example, in a python code snippet with two functions:
+"""
+    public static void fun1() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+    }
+
+    public static void fun2() {
+        int i = 0;
+        while (true) {
+            System.out.println(i);
+            i++;
+            if (i == 5) break; 
+        }
+
+        for (int j = 0; j < 5; j++) {
+            System.out.println(j);
+        }
+    }
+"""
+The entry_point is 'fun2', you should transform the loops of the function 'fun2'. The rephrased code should be like:
+"""
+    public static void func1() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+    }
+
+    public static void func2() {
+        int i = 0;
+        while (true) {
+            System.out.println(i);
+            i++;
+            if (i == 5) break; 
+        }
+
+        int j = 0;
+        while (j < 5) {
+            System.out.println(j);
+            j++;
+        }
+    }
+"""

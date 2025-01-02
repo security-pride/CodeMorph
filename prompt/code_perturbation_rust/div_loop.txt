@@ -1,0 +1,57 @@
+You should divide a large loop into two smaller loops. The divide rule is as following using mathematical expressions, you should be converted into the logical expression of the specified programming language:
+1. If the start and end interval of the loop is [x,y), the times of the loop is n, that is n = x - y, choose a integer m that m <= n/2;
+2. Divide the large loop into two smaller loops, the first loop interval is [x,n/m), the second loop interval is [n/m, y);
+
+The pseudocode is as:
+"""
+for i in 0..n {
+    body1
+}
+"""
+Then you should change it into two smaller loops, assuming that m = 2, the pseudocode is as:
+"""
+for i in 0..n/2 {
+    body1
+}
+
+for i in n/2..n {
+    body1
+}
+"""
+For example, in a rust code snippet with two functions:
+"""
+fn func1() {
+    for i in 0..10 {
+        println!("{}", i);
+    }
+}
+
+fn func2() {
+    let l = vec![1, 2, 3, 4, 5];
+    for i in 0..l.len() {
+        println!("{}", i);
+    }
+}
+
+"""
+The entry_point is 'func2', you should divide the large loop into two smaller loops in the function 'func2'. The rephrased code should be like:
+"""
+fn func1() {
+    for i in 0..10 {
+        println!("{}", i);
+    }
+}
+
+fn func2() {
+    let l = vec![1, 2, 3, 4, 5];
+    let mid = l.len() / 2;
+    
+    for i in 0..mid {
+        println!("{}", i);
+    }
+    for i in mid..l.len() {
+        println!("{}", i);
+    }
+}
+"""
+

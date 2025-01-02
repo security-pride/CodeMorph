@@ -1,0 +1,44 @@
+please renaming variables. You only can rename all variables that defined in the function that is the entry point. The function call, key parameters and the external variables should not be changed.
+
+The example in python is as follows, you should adapt it to the programming language of the given code.
+For example, in a python code snippet with two functions:
+"""
+def func1 ():
+    a = 5
+    var_str1 = "my string1"
+    my_func(var_str1)
+    my_func2(key1=a, key2=var_str1)
+
+global_var = 10
+
+def func2():
+    b = 5
+    var_str2 = "my string2"
+    global_var += b
+    my_func(var_str2)
+    my_func2(key1=b, key2=var_str1)
+"""
+
+
+entry_point is 'func2', you should change the variables in the function 'func2'. The rephrased code can be:
+
+"""
+def func1 ():
+    a = 5
+    var_str1 = "my string1"
+    my_func(var_str1)
+    my_func2(key1=a, key2=var_str1)
+
+global_var = 10
+
+def func2():
+    any_int_variables_name = 5
+    any_string_variables_name = "my string2"
+    global_var += 1
+    my_func(any_string_variables_name)
+    my_func2(key1=global_var, key2=any_string_variables_name)
+"""
+
+The function call, key parameters and the external variables do not be changed.
+
+The name you choose for the variables should be confused.

@@ -1,0 +1,78 @@
+you should transform arithmetic logic to equivalent arithmetic logic by the transform rules followed, which is in cpp pseudocode, you should convert the expression according to the specified programming language:
+1. a <= b should be transformed to !(a > b)
+2. a >= b should be transformed to !(a < b)
+3. a < b should be transformed to !(a >= b)
+4. a > b should be transformed to !(a <= b)
+5. a == b should be transformed to !(a != b)
+6. a != b should be transformed to !(a == b)
+
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+
+void func1() {
+    int a = 1;
+    int b = 2;
+    if (a <= b) {
+        std::cout << "a is less than or equal to b" << std::endl;
+    }
+}
+
+void func2() {
+    int c = 3;
+    int d = 4;
+    if (c >= d) {
+        std::cout << "c is greater than or equal to d" << std::endl;
+    }
+    if (c <= d) {
+        std::cout << "c is less than or equal to d" << std::endl;
+    }
+    if (c < d) {
+        std::cout << "c is less than d" << std::endl;
+    }
+    if (c > d) {
+        std::cout << "c is greater than d" << std::endl;
+    }
+    if (c != d) {
+        std::cout << "c is not equal to d" << std::endl;
+    }
+    if (c == d) {
+        std::cout << "c is equal to d" << std::endl;
+    }
+}
+    """
+The entry_point is 'func2', you should transform arithmetic logic to equivalent arithmetic logic in the function 'func2'. The rephrased code should be like:
+"""
+#include <iostream>
+
+void func1() {
+    int a = 1;
+    int b = 2;
+    if (a <= b) {
+        std::cout << "a is less than or equal to b" << std::endl;
+    }
+}
+
+void func2() {
+    int c = 3;
+    int d = 4;
+    if (!(c < d)) {
+        std::cout << "c is greater than or equal to d" << std::endl;
+    }
+    if (!(c > d)) {
+        std::cout << "c is less than or equal to d" << std::endl;
+    }
+    if (!(c >= d)) {
+        std::cout << "c is less than d" << std::endl;
+    }
+    if (!(c <= d)) {
+        std::cout << "c is greater than d" << std::endl;
+    }
+    if (!(c == d)) {
+        std::cout << "c is not equal to d" << std::endl;
+    }
+    if (!(c != d)) {
+        std::cout << "c is equal to d" << std::endl;
+    }
+}
+        """

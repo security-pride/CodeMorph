@@ -1,0 +1,47 @@
+you should extract methods from arithmetic expressions, and the arithmetic experessions should be replaced with the methods. The arithmetic expression should be the return value of the methods. The name of the extracted method should be confused that it is not clear what the method does.
+
+The example in go is as follows, you should adapt it to the programming language of the given code.
+For example, in a go code snippet with two functions:
+
+"""
+func func1() (int, int) {
+    a := 5 + 3
+    b := 10 - 2
+    return a, b
+}
+
+func func2() float64 {
+    c := 5
+    x := 10
+    d := c * 2 + x
+    e := c * 2 + x
+    f := float64(d) + float64(e)/float64(c)
+    return f
+}
+"""
+The entry_point is 'func2', you should extract methods from the arithmetic expressions in the function 'func2'. Note that, the defintion of the extraction methods should be only before the 'func2'. The rephrased code should be like:
+
+"""
+func func1() (int, int) {
+    a := 5 + 3
+    b := 10 - 2
+    return a, b
+}
+
+func confused_func(a, b int) int {
+    return a*2 + b
+}
+
+func do_something(x, y, z int) float64 {
+    return float64(x) + float64(y)/float64(z)
+}
+
+func func2() float64 {
+    c := 5
+    x := 10
+    d := confused_func(c, x)
+    e := confused_func(c, x)
+    f := do_something(d, e, c)
+    return f
+}
+"""

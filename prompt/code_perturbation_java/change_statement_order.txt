@@ -1,0 +1,37 @@
+if two adjacent statements has no shared variable with each other, you should change the order of the statements. 
+
+The example in java is as follows, you should adapt it to the programming language of the given code.
+For example, in a java code snippet with two functions:
+"""
+    public static void func1() {
+        int a = 1;
+        int b = 2;
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    public static void func2() {
+        int c = 3;
+        int d = 4;
+        System.out.println(c);
+        System.out.println(d);
+    }
+
+"""
+The entry_point is 'func2', you should change the order of the statements in the function 'func2'. The rephrased code should be like:
+"""
+    public static void func1() {
+        int a = 1;
+        int b = 2;
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    public static void func2() {
+        int d = 4;
+        int c = 3;
+        System.out.println(c);
+        System.out.println(d);
+    }
+"""
+That, the order of the statements 'c = 3' and 'd = 4' is changed.

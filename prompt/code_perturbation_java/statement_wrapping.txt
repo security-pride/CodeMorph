@@ -1,0 +1,35 @@
+you should wrap the statements with if or for statement. The format in java is as follows, you should adapt it to the programming language of the given code.
+As a statement 'target_statement' in the code snippet:
+1. The wrapping rule with if statement is:
+if (true) {
+    targetStatement();
+}
+    
+2. The wrapping rule with for statement is:
+for (int i = 0; i < 1; i++) {
+    targetStatement();
+}
+
+For example, in a java code snippet with two functions:
+"""
+    public static void func1() {
+        System.out.println("Hello World");
+    }
+
+    public static void func2() {
+        System.out.println("Hello World");
+    }
+"""
+
+The entry_point is "func2", you should wrap the statements with if or while or for statement in the function "func2". The rephrased code can be:
+"""
+    public static void func1() {
+        System.out.println("Hello World");
+    }
+
+    public static void func2() {
+        for (int i = 0; i < 1; i++) {
+            System.out.println("Hello World");
+        }
+    }
+"""

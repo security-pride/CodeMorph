@@ -1,0 +1,55 @@
+you should extract methods from arithmetic expressions, and the arithmetic experessions should be replaced with the methods. The arithmetic expression should be the return value of the methods. The name of the extracted method should be confused that it is not clear what the method does.
+
+The example in cpp is as follows, you should adapt it to the programming language of the given code.
+For example, in a cpp code snippet with two functions:
+
+"""
+#include <iostream>
+#include <utility>
+
+std::pair<int, int> func1() {
+    int a = 5 + 3;
+    int b = 10 - 2;
+    return std::make_pair(a, b);
+}
+
+double func2() {
+    int c = 5;
+    int x = 10;
+    int d = c * 2 + x;
+    int e = c * 2 + x;
+
+    double f = d + static_cast<double>(e) / c;
+    return f;
+}
+"""
+The entry_point is 'func2', you should extract methods from the arithmetic expressions in the function 'func2'. Note that, the defintion of the extraction methods should be only before the 'func2'. The rephrased code should be like:
+
+"""
+#include <iostream>
+#include <utility>
+
+std::pair<int, int> func1() {
+    int a = 5 + 3;
+    int b = 10 - 2;
+    return std::make_pair(a, b);
+}
+
+int confused_func(int a, int b) {
+    return a * 2 + b;
+}
+
+double do_something(int x, int y, int z) {
+    return x + static_cast<double>(y) / z;
+}
+
+double func2() {
+    int c = 5;
+    int x = 10;
+    int d = confused_func(c, x);
+    int e = confused_func(c, x);
+
+    double f = do_something(d, e, c);
+    return f;
+}
+"""

@@ -1,0 +1,44 @@
+if two adjacent statements has no shared variable with each other, you should change the order of the statements. 
+
+The example in go is as follows, you should adapt it to the programming language of the given code.
+For example, in a go code snippet with two functions:
+"""
+package main
+
+import "fmt"
+
+func func1() {
+    a := 1
+    b := 2
+    fmt.Println(a)
+    fmt.Println(b)
+}
+
+func func2() {
+    c := 3
+    d := 4
+    fmt.Println(c)
+    fmt.Println(d)
+}
+"""
+The entry_point is 'func2', you should change the order of the statements in the function 'func2'. The rephrased code should be like:
+"""
+package main
+
+import "fmt"
+
+func func1() {
+    a := 1
+    b := 2
+    fmt.Println(a)
+    fmt.Println(b)
+}
+
+func func2() {
+    d := 4
+    c := 3
+    fmt.Println(c)
+    fmt.Println(d)
+}
+"""
+That, the order of the statements 'c = 3' and 'd = 4' is changed.

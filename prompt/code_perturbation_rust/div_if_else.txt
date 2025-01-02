@@ -1,0 +1,59 @@
+You should divide the 'if else-if else' statement into 'if else if else'. You should follow the rule to divide the 'if else-if else' statement as below which in rust, you should adapt it to the programming language of the given code:
+The 'if else-if else' pseudocode is as:
+"""
+if condition_a {
+    body_a;
+} else if condition_b {
+    body_b;
+} else {
+    body_c;
+}
+    """
+Then you should change it into 'if else if else', the pseudocode is as:
+"""
+if condition_a {
+    body_a;
+} else {
+    if condition_b {
+        body_b;
+    } else {
+        body_c;
+    }
+}
+"""
+
+For example, in a rust code snippet with two functions:
+"""
+fn func1() {
+    let a = 1;
+}
+
+fn func2() {
+    let b = 2;
+    if b > 2 {
+        println!("b is greater than 2");
+    } else if b == 2 {
+        println!("b is equal to 2");
+    } else {
+        println!("b is less than 2");
+    }
+}
+        """
+The entry_point is 'func2', you should divide the if else-if else statement into if else if else in the function 'func2'. The rephrased code should be like:
+
+"""
+fn func1() {
+    let a = 1;
+}
+
+fn func2() {
+    let b = 2;
+    if b > 2 {
+        println!("b is greater than 2");
+    } else if b == 2 {
+        println!("b is equal to 2");
+    } else {
+        println!("b is less than 2");
+    }
+}
+"""

@@ -1,0 +1,57 @@
+You should divide a large loop into two smaller loops. The divide rule is as following using mathematical expressions, you should be converted into the logical expression of the specified programming language:
+1. If the start and end interval of the loop is [x,y), the times of the loop is n, that is n = x - y, choose a integer m that m <= n/2;
+2. Divide the large loop into two smaller loops, the first loop interval is [x,n/m), the second loop interval is [n/m, y);
+
+The pseudocode is as:
+"""
+for i := 0; i < n; i++ {
+    body1
+}
+"""
+Then you should change it into two smaller loops, assuming that m = 2, the pseudocode is as:
+"""
+for i := 0; i < n/2; i++ {
+    body1
+}
+for i := n/2; i < n; i++ {
+    body1
+}
+"""
+For example, in a go code snippet with two functions:
+"""
+import "fmt"
+
+func func1() {
+    for i := 0; i < 10; i++ {
+        fmt.Println(i)
+    }
+}
+
+func func2() {
+    l := []int{1, 2, 3, 4, 5}
+    for i := 0; i < len(l); i++ {
+        fmt.Println(i)
+    }
+}
+"""
+The entry_point is 'func2', you should divide the large loop into two smaller loops in the function 'func2'. The rephrased code should be like:
+"""
+import "fmt"
+
+func func1() {
+    for i := 0; i < 10; i++ {
+        fmt.Println(i)
+    }
+}
+
+func func2() {
+    l := []int{1, 2, 3, 4, 5}
+    for i := 0; i < len(l)/2; i++ {
+        fmt.Println(i)
+    }
+    for i := len(l)/2; i < len(l); i++ {
+        fmt.Println(i)
+    }
+}
+"""
+

@@ -1,0 +1,71 @@
+you should extract methods from 'if' statement. The following explains the rules to extract the method from the 'if' statement which is in rust, you should adapt it to the programming language of the given code:
+The 'if' statement in the rust is as:
+"""
+fn func() {
+    if condition_a {
+        bodyA
+    } else {
+        bodyB
+    }
+}
+"""
+We assume that there are variables x and y in the condition_a expression, then you should change the code into:
+"""
+fn random_name(a: i32, b: i32) -> bool {
+    // Return condition_a based on your logic
+    return condition_a
+}
+
+fn func(x: i32, y: i32) {
+    if random_name(x, y) {
+        bodyA
+    } else {
+        bodyB
+    }
+}
+"""
+Note that, the arguments name of the extracted method should be different from the variables in the conditionA expression. The name of the extracted method should be confused that it is not clear what the method does.
+
+For example, in a rust code snippet with two functions:
+"""
+fn func1() -> i32 {
+    let a = 1;
+    a
+}
+
+fn func2() {
+    let a = 10;
+    let b = 2;
+    let c = "It is a string";
+
+    if a % 2 != 0 && b > 2 && !c.is_empty() {
+        println!("Hello World");
+    } else {
+        println!("Goodbye World");
+    }
+}
+"""
+The entry_point is 'func2', you should extract the method from the if statement in the function 'func2'. Assuming the extracted method name is do_computation,tThe rephrased code can be like:
+
+"""
+fn func1() -> i32 {
+    let a = 1;
+    a
+}
+
+fn do_computation(x: i32, y: i32, z: &str) -> bool {
+    x % 2 != 0 && y > 2 && !z.is_empty()
+}
+
+fn func2() {
+    let a = 10;
+    let b = 2;
+    let c = "It is a string";
+
+    if do_computation(a, b, c) {
+        println!("Hello World");
+    } else {
+        println!("Goodbye World");
+    }
+}
+"""

@@ -1,0 +1,44 @@
+you should insert junk function code that won't be executed, the added functions that are never called. 
+
+In the insert junk function, there can be various control flow statements such as "exit()", "return", and "break", the function name should be accordingly.
+
+If the code is cpp or java, you should insert junk anonymous functions. 
+
+The example in rust is as follows, you should adapt it to the programming language of the given code.
+For example, in a rust code snippet with two functions:
+"""
+fn func1() -> i32 {
+    let a = 5;
+    a 
+}
+
+fn func2() -> i32 {
+    let b = 10;
+    println!("{}", b); 
+    let c = b + 1; 
+    c 
+}
+"""
+The entry_point is 'func2', you should insert junk code in the function 'func2'. The rephrased code can be:
+
+"""
+use std::process;
+
+fn func1() -> i32 {
+    let a = 5;
+    a 
+}
+
+fn func2() -> i32 {
+    let b = 10;
+
+    fn exit_process() {
+        process::exit(0);
+    }
+
+    println!("{}", b); 
+    let c = b + 1; 
+    c 
+}
+"""
+That function 'exit_process' is not called in the code.

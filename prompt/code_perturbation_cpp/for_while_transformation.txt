@@ -1,0 +1,77 @@
+please transform for loop to 'while' loop and while loop to 'for' loop. You should transform all the loops in the function. In Python and Rust, do not change the unlimited loop such as 'while true','while 1'.
+
+The transformation rule with pseudocode is in cpp, you should adapt it to the programming language of the given code:
+1. for loop to while loop:
+The for loop to while loop transformation should be like:
+"""
+for(int i(0); i < n; i++){
+    body
+}
+"""
+After transformation, the pseudocode should be like:
+"""
+int i = 0;
+while (i < n) {
+    body
+    ++i;
+}
+"""
+2. while loop to for loop:
+The while loop to for loop transformation should be like:
+"""
+int i = 0;
+while (i < n) {
+    body
+    ++i;
+}
+"""
+After transformation, the pseudocode should be like:
+"""
+for(int i(0); i < n; i++){
+    body
+}
+"""
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+
+void fun1() {
+    for (int i = 0; i < 5; ++i) {
+        std::cout << i << std::endl;
+    }
+}
+
+void fun2() {
+    int i = 0;
+    while (true) {
+        std::cout << i << std::endl;
+        ++i;
+        if (i >= 5) break; 
+    }
+    for (int j = 0; j < 5; ++j) {
+        std::cout << j << std::endl;
+    }
+}
+"""
+The entry_point is 'fun2', you should transform the loops of the function 'fun2'. The rephrased code should be like:
+"""
+#include <iostream>
+
+void func1() {
+    for (int i = 0; i < 5; ++i) {
+        std::cout << i << std::endl;
+    }
+}
+
+void func2() {
+
+for (int i = 0; i < 5; ++i) {
+    std::cout << i << std::endl;
+}
+    int j = 0;
+    while (j < 5) {
+        std::cout << j << std::endl;
+        ++j;
+    }
+}
+"""

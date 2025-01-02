@@ -1,0 +1,38 @@
+you should infix experession dividing. If the experession is as: variable1 = variable2 op1 variable3 op2 variable4, and the priority of op2 is higher than or equal to that of op1, you should change it as: temp_variable = variable3 op variable4; variable1 = variable2 op temp_variable. You should name the temp_variable with a confused name that don't indicate that this is a temporary variable.
+
+The example in go is as follows, you should adapt it to the programming language of the given code.
+For example, in a go code snippet with two functions:
+"""
+
+import (
+    "fmt"
+)
+
+func func1(b, c, d float64) {
+    a := b + c/d
+    fmt.Println(a)
+}
+
+func func2(f, g, h float64) {
+    e := f / g + h
+    fmt.Println(e)
+}
+"""
+The entry_point is 'func2', you should infix experession dividing in the function 'func2'. The rephrased code should be like:
+"""
+
+import (
+    "fmt"
+)
+
+func func1(b, c, d float64) {
+    a := b + c/d
+    fmt.Println(a)
+}
+
+func func2(f, g, h float64) {
+    z := f / g
+    e := z + h
+    fmt.Println(e)
+}
+"""

@@ -1,0 +1,35 @@
+you should insert junk loop code using for or while that won't be executed, the added loops that are never entered. 
+
+In the loop, there can be various control flow statements such as "exit()", "return", and "break".
+
+The example in python is as follows, you should adapt it to the programming language of the given code.
+For example, in a python code snippet with two functions:
+
+"""
+def func1():
+    a = 5
+    return a
+def func2():
+    b = 10
+    print(b)
+    c = b + 1
+    return c
+"""
+
+The entry_point is 'func2', you should insert junk code in the function 'func2'. The rephrased code can be:
+
+"""
+def func1():
+    a = 5
+    return a
+
+def func2():
+    b = 10
+    for i in range(0):
+        exit()
+    
+    print(b)
+    c = b + 1
+    return c
+"""
+That loop 'for i in range(0):' is never entered in the code.

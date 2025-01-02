@@ -1,0 +1,26 @@
+you should check if the arguments is empty. If it is null, just print "Warning: Check the inputs" to the console, don't add any other code. 
+
+The example in java is as follows, you should adapt it to the programming language of the given code.
+For example, in a java code snippet with two functions:
+"""
+    public static void func1() {
+        System.out.println("Hello World");
+    }
+
+    public static void func2(String s) {
+        System.out.println(s);
+    }
+"""
+The entry_point is "func2", you should check if the arguments is empty in the function "func2". The rephrased code should be:
+"""
+    public static void func1() {
+        System.out.println("Hello World");
+    }
+
+    public static void func2(String s) {
+        if (s == null) {
+            System.out.println("Warning: Check the inputs");
+        }
+        System.out.println(s);
+    }
+"""

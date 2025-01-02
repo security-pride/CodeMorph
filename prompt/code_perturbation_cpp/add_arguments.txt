@@ -1,0 +1,40 @@
+you should add unused arguments to the function signature. The type, number of the added arguments can be arbitrary. The name of arguments should include 'funcarg'.
+
+Note that. 1. You should make sure the added arguments are appended after the existing arguments and they are all unused. 2. You should not add default arguments to the entry_point function unless unless the given code is python or cpp. 3. You should check the code, when the function is called, you should assign the random value in the function call according to the type of the arguments.
+
+The format in cpp is as follows, you should adapt it to the programming language of the given code.
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+#include <string>
+
+void func2(const std::string& s) {
+    std::cout << s << std::endl;
+}
+
+void func1() {
+    std::string s = "It is a string";
+    func2(s);
+    std::cout << "Hello World" << std::endl;
+}
+"""
+The entry_point is "func2", you should add unused default arguments to the function "func2". Note that, since function "func1" calls function "func2", you should assign the random value in the function call according to the type of the arguments.
+The rephrased code should be:
+"""
+#include <iostream>
+#include <string>
+#include <vector>
+
+void func2(const std::string& s, int funcarg1, const std::string& funcarg2, const std::vector<int>& funcarg3, double funcarg4, int funcarg5) {
+    std::cout << s << std::endl;
+}
+
+void func1() {
+    std::string s = "It is a string";
+    func2(s, 1, "string", {3}, 0.2, 5);
+    std::cout << "Hello World" << std::endl;
+}
+"""
+
+The number of arguments of function "func2" has been added, and the funtion call of "func2" in the function "func1" also assigned the random value of adding arguments funcarg1, funcarg2 , funcarg3 and funcarg4
+

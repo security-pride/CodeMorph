@@ -1,0 +1,30 @@
+if two adjacent statements has no shared variable with each other, you should change the order of the statements. 
+
+The example in python is as follows, you should adapt it to the programming language of the given code.
+For example, in a python code snippet with two functions:
+"""
+def func1():
+    a = 1
+    b = 2
+    print(a)
+    print(b)
+def func2():
+    c = 3
+    d = 4
+    print(c)
+    print(d)
+"""
+The entry_point is 'func2', you should change the order of the statements in the function 'func2'. The rephrased code should be like:
+"""
+def func1():
+    a = 1
+    b = 2
+    print(a)
+    print(b)
+def func2():
+    d = 4
+    c = 3
+    print(c)
+    print(d)
+"""
+That, the order of the statements 'c = 3' and 'd = 4' is changed.

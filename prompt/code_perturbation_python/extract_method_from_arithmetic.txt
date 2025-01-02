@@ -1,0 +1,41 @@
+you should extract methods from arithmetic expressions, and the arithmetic experessions should be replaced with the methods. The arithmetic expression should be the return value of the methods. The name of the extracted method should be confused that it is not clear what the method does.
+
+The example in python is as follows, you should adapt it to the programming language of the given code.
+For example, in a python code snippet with two functions:
+
+"""
+def func1():
+    a = 5 + 3
+    b = 10 - 2
+    return a, b
+def func2():
+    c = 5
+    x = 10
+    d = c*2 + x
+    e = c*2 + x
+
+    f = d + e/c
+    return f
+"""
+The entry_point is 'func2', you should extract methods from the arithmetic expressions in the function 'func2'. Note that, the defintion of the extraction methods should be only before the 'func2'. The rephrased code can be like:
+
+"""
+def func1():
+    a = 5 + 3
+    b = 10 - 2
+    return a, b
+
+def confused_func(a, b):
+    return a*2 + b
+def do_something(x, y, z):
+    return x + y/z
+
+def func2():
+    c = 5
+    x = 10
+    d = confused_func(c, x)
+    e = confused_func(c, x)
+
+    f = do_something(d, e, c)
+    return f
+"""

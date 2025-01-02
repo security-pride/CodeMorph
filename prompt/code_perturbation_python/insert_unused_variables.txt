@@ -1,0 +1,34 @@
+you should insert unused variables. The added unused variables should not appear in the original function. The name of the unused variables should include 'important_var'.
+
+The example in python is as follows, you should adapt it to the programming language of the given code.
+For example, in a python code snippet with two functions:
+
+"""
+def func1():
+    a = 5
+    return a
+def func2():
+    b = 10
+    print(b)
+    c = b + 1
+    return c
+"""
+
+The entry_point is 'func2', you should insert junk code in the function 'func2'. The rephrased code can be:
+
+"""
+def func1():
+    a = 5
+    return a
+
+def func2():
+    b = 10
+    
+    important_var1 = 0
+    important_var2 = [1,2,3]
+    
+    print(b)
+    c = b + 1
+    return c
+"""
+That variable 'important_var1' and 'important_var2' are not used in the code.

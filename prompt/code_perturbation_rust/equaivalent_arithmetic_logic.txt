@@ -1,0 +1,74 @@
+you should transform arithmetic logic to equivalent arithmetic logic by the transform rules followed, which is in rust pseudocode, you should convert the expression according to the specified programming language:
+1. a <= b should be transformed to !(a > b)
+2. a >= b should be transformed to !(a < b)
+3. a < b should be transformed to !(a >= b)
+4. a > b should be transformed to !(a <= b)
+5. a == b should be transformed to !(a != b)
+6. a != b should be transformed to !(a == b)
+
+For example, in a rust code snippet with two functions:
+"""
+fn func1() {
+    let a = 1;
+    let b = 2;
+    if a <= b {
+        println!("a is less than or equal to b");
+    }
+}
+fn func2() {
+    let c = 3;
+    let d = 4;
+    if c >= d {
+        println!("c is greater than or equal to d");
+    }
+    if c <= d {
+        println!("c is less than or equal to d");
+    }
+    if c < d {
+        println!("c is less than d");
+    }
+    if c > d {
+        println!("c is greater than d");
+    }
+    if c != d {
+        println!("c is not equal to d");
+    }
+    if c == d {
+        println!("c is equal to d");
+    }
+}
+    """
+The entry_point is 'func2', you should transform arithmetic logic to equivalent arithmetic logic in the function 'func2'. The rephrased code should be like:
+"""
+fn func1() {
+    let a = 1;
+    let b = 2;
+    if a <= b {
+        println!("a is less than or equal to b");
+    }
+}
+
+fn func2() {
+    let c = 3;
+    let d = 4;
+
+    if !(c < d) {
+        println!("c is greater than or equal to d");
+    }
+    if !(c > d) {
+        println!("c is less than or equal to d");
+    }
+    if !(c >= d) {
+        println!("c is less than d");
+    }
+    if !(c <= d) {
+        println!("c is greater than d");
+    }
+    if !(c == d) {
+        println!("c is not equal to d");
+    }
+    if !(c != d) {
+        println!("c is equal to d");
+    }
+}
+        """

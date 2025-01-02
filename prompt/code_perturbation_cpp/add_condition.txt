@@ -1,0 +1,29 @@
+for each if statement, you should improve its condition by adding an else clause, and just prints a warning message to the console in the added condition. 
+
+The format in cpp is as follows, you should adapt it to the programming language of the given code:
+
+1. For more complex if-else statement:
+If the original code is:
+"""
+if (condition1) {
+    code1
+} else if (condition2) {
+    code2
+} else {
+    code3
+}
+"""
+The rephrased code should be:
+"""
+if (condition1) {
+    code1
+} else if (condition2) {
+    code2
+} else if (!condition1 && !condition2) {
+    code3
+} else {
+    std::cout << "Warning: The condition is not satisfied" << std::endl;
+}
+"""
+
+Note that, you just add print("Warning: The condition is not satisfied") in the added condition clause, and do not change the original code.

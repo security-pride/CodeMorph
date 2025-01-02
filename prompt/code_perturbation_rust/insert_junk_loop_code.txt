@@ -1,0 +1,42 @@
+you should insert junk loop code using for or while that won't be executed, the added loops that are never entered. 
+
+In the loop, there can be various control flow statements such as "exit()", "return", and "break".
+
+The example in rust is as follows, you should adapt it to the programming language of the given code.
+For example, in a rust code snippet with two functions:
+
+"""
+fn func1() -> i32 {
+    let a = 5;
+    a 
+}
+
+fn func2() -> i32 {
+    let b = 10;
+    println!("{}", b); 
+    let c = b + 1; 
+    c 
+}
+"""
+
+The entry_point is 'func2', you should insert junk code in the function 'func2'. The rephrased code can be:
+
+"""
+use std::process;
+fn func1() -> i32 {
+    let a = 5;
+    a 
+}
+
+fn func2() -> i32 {
+    let b = 10;
+    for _ in 0..0 {
+        process::exit(0);
+    }
+    
+    println!("{}", b); 
+    let c = b + 1; 
+    c 
+}
+"""
+That loop 'for _ in 0..0:' is never entered in the code.

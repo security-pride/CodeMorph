@@ -1,0 +1,48 @@
+please renaming variables. You only can rename all variables that defined in the function that is the entry point. The function call, key parameters and the external variables should not be changed.
+
+The example in java is as follows, you should adapt it to the programming language of the given code.
+For example, in a java code snippet with two functions:
+"""
+    static int globalVar = 10;
+
+    public static void func1() {
+        int a = 5;
+        String varStr1 = "my string1";
+        myFunc(varStr1);
+        myFunc2(a, varStr1);
+    }
+
+    public static void func2() {
+        int b = 5;
+        String varStr2 = "my string2";
+        globalVar += b;
+        myFunc(varStr2);
+        myFunc2(b, varStr2);
+    }
+"""
+
+
+entry_point is 'func2', you should change the variables in the function 'func2'. The rephrased code can be:
+
+"""
+    static int globalVar = 10;
+
+    public static void func1() {
+        int a = 5;
+        String varStr1 = "my string1";
+        myFunc(varStr1);
+        myFunc2(a, varStr1);
+    }
+
+    public static void func2() {
+        int anyIntVariablesName = 5;
+        String anyStringVariablesName = "my string2";
+        globalVar += 1;
+        myFunc(anyStringVariablesName);
+        myFunc2(globalVar, anyStringVariablesName);
+    }
+"""
+
+The function call, key parameters and the external variables do not be changed.
+
+The name you choose for the variables should be confused.

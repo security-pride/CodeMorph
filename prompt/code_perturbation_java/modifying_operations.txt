@@ -1,0 +1,52 @@
+please jsut modify the operations: +=, -=, *=, /=, %=. No more than other operations should be modified.
+You should follow the rule as below:
+1. a += b should be changed to a = a + b
+2. a -= b should be changed to a = a - b
+3. a *= b should be changed to a = a * b
+4. a /= b should be changed to a = a / b
+5. a %= b should be changed to a = a % b
+
+
+For example, in a java code snippet with two functions, note that I don't change b++ or --b operations:
+
+"""
+    public static void func1() {
+        int a = 1;
+        a += 1;
+        System.out.println(a);
+    }
+
+    public static void func2() {
+        int b = 2;
+        b -= 1;
+        b *= 2;
+        b /= 2;
+        b += 2;
+        b %= 2;
+        b++;
+        b--;
+        System.out.println(b);
+    }
+"""
+
+The entry_point is 'func2', you should modify the operations of the function 'func2'. The rephrased code should be like:
+
+"""
+    public static void func1() {
+        int a = 1;
+        a += 1;
+        System.out.println(a);
+    }
+
+    public static void func2() {
+        int b = 2;
+        b = b - 1;
+        b = b * 2;
+        b = b / 2;
+        b = b + 2;
+        b = b % 2;
+        b++;
+        b--;
+        System.out.println(b);
+    }
+"""

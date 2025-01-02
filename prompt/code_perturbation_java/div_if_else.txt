@@ -1,0 +1,61 @@
+You should divide the 'if else-if else' statement into 'if else if else'. You should follow the rule to divide the 'if else-if else' statement as below which in java, you should adapt it to the programming language of the given code:
+The 'if else-if else' pseudocode is as:
+"""
+if (conditionA) {
+    bodyA
+} else if (conditionB) {
+    bodyB
+} else {
+    bodyC
+}
+    """
+Then you should change it into 'if else if else', the pseudocode is as:
+"""
+if (conditionA) {
+    bodyA
+} else {
+    if (conditionB) {
+        bodyB
+    } else {
+        bodyC
+    }
+}
+"""
+
+For example, in a java code snippet with two functions:
+"""
+    public static void func1() {
+        int a = 1;
+    }
+
+    public static void func2() {
+        int b = 2;
+        if (b > 2) {
+            System.out.println("b is greater than 2");
+        } else if (b == 2) {
+            System.out.println("b is equal to 2");
+        } else {
+            System.out.println("b is less than 2");
+        }
+    }
+        """
+The entry_point is 'func2', you should divide the if else-if else statement into if else if else in the function 'func2'. The rephrased code should be like:
+
+"""
+    public static void func1() {
+        int a = 1;
+    }
+
+    public static void func2() {
+        int b = 2;
+        if (b > 2) {
+            System.out.println("b is greater than 2");
+        } else {
+            if (b == 2) {
+                System.out.println("b is equal to 2");
+            } else {
+                System.out.println("b is less than 2");
+            }
+        }
+    }
+"""

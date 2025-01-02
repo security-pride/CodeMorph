@@ -1,0 +1,73 @@
+please transform "switch"/"match" structure to "if" statement. The format is as follows, you should adapt it to the programming language of the given code.
+The "switch" structure to "if" statement transformation should be like:
+"""
+switch value {
+    case condition1:
+        body1
+    case condition2:
+        body2
+    default:
+        body3
+}
+"""
+After transformation, the pseudocode should be like:
+"""
+if value == condition1 {
+    body1
+} else if value == condition2 {
+    body2
+} else {
+    body3
+}
+"""
+
+For example, in a C++ code snippet with two functions:
+"""
+import "fmt"
+
+func func1() {
+    a := 1
+    if a == 1 {
+        fmt.Println("Hello World")
+    } else {
+        fmt.Println("Goodbye World")
+    }
+}
+
+func func2() {
+    value := 1
+    switch value {
+    case 1:
+        fmt.Println("One")
+    case 2:
+        fmt.Println("Two")
+    default:
+        fmt.Println("Invalid")
+    }
+}
+"""
+
+entry_point is 'func2', you should transform the code in the function 'func2'. The rephrased code should be like:
+"""
+import "fmt"
+
+func func1() {
+    a := 1
+    if a == 1 {
+        fmt.Println("Hello World")
+    } else {
+        fmt.Println("Goodbye World")
+    }
+}
+
+func func2() {
+    value := 1
+    if value == 1 {
+        fmt.Println("One")
+    } else if value == 2 {
+        fmt.Println("Two")
+    } else {
+        fmt.Println("Invalid")
+    }
+}
+"""

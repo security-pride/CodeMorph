@@ -1,0 +1,46 @@
+please renaming variables. You only can rename all variables that defined in the function that is the entry point. The function call, key parameters and the external variables should not be changed.
+
+The example in go is as follows, you should adapt it to the programming language of the given code.
+For example, in a go code snippet with two functions:
+"""
+var globalVar = 10
+
+func func1() {
+    a := 5
+    varStr1 := "my string1"
+    myFunc(varStr1)
+    myFunc2(a, varStr1)
+}
+
+func func2() {
+    b := 5
+    varStr2 := "my string2"
+    globalVar += b
+    myFunc(varStr2)
+    myFunc2(b, varStr2)
+}
+"""
+entry_point is 'func2', you should change the variables in the function 'func2'. The rephrased code can be:
+
+"""
+var globalVar = 10
+
+func func1() {
+    a := 5
+    varStr1 := "my string1"
+    myFunc(varStr1)
+    myFunc2(a, varStr1)
+}
+
+func func2() {
+    anyIntVariablesName := 5
+    anyStringVariablesName := "my string2"
+    globalVar += 1
+    myFunc(anyStringVariablesName)
+    myFunc2(globalVar, anyStringVariablesName)
+}
+"""
+
+The function call, key parameters and the external variables do not be changed.
+
+The name you choose for the variables should be confused.

@@ -1,0 +1,71 @@
+you should transform 'if' then 'continue' to 'if else'. You can use other placeholders to represent a do-nothing functionality to replace 'continue' such as "pass" in python, {} in C++, etc. 
+
+I will give you the pseudocode to introduce the transformation rule in go, you should adapt it to the programming language of the given code.
+
+Transformation rule:
+The 'if' then 'continue' pseudocode is as:
+"""
+if condition {
+    bodyA
+    continue 
+}
+bodyB
+"""
+Then you should change it into 'if else', the pseudocode is as:
+"""
+import "fmt"
+
+func main() {
+    if condition {
+        bodyA
+        {}
+    } else {
+        bodyB
+    }
+}
+"""
+
+For example, in a go code snippet with two functions:
+"""
+import "fmt"
+
+func func1() {
+    for i := 0; i < 5; i++ {
+        if i == 3 {
+            continue
+        }
+        fmt.Println(i)
+    }
+}
+
+func func2() {
+    for j := 0; j < 3; j++ {
+        if j == 2 {
+            continue
+        }
+        fmt.Println(j)
+    }
+}
+"""
+The entry_point is 'func2', you should transform the if then continue statement to if else in the function 'func2'. The rephrased code should be like:
+"""
+import "fmt"
+
+func func1() {
+    for i := 0; i < 5; i++ {
+        if i == 3 {
+            continue
+        }
+        fmt.Println(i)
+    }
+}
+
+func func2() {
+    for j := 0; j < 3; j++ {
+        if j == 2 {
+        } else {
+            fmt.Println(j)
+        }
+    }
+}
+"""

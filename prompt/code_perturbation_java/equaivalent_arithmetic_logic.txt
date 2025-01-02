@@ -1,0 +1,76 @@
+you should transform arithmetic logic to equivalent arithmetic logic by the transform rules followed, which is in java pseudocode, you should convert the expression according to the specified programming language:
+1. a <= b should be transformed to !(a > b)
+2. a >= b should be transformed to !(a < b)
+3. a < b should be transformed to !(a >= b)
+4. a > b should be transformed to !(a <= b)
+5. a == b should be transformed to !(a != b)
+6. a != b should be transformed to !(a == b)
+
+For example, in a java code snippet with two functions:
+"""
+    public static void func1() {
+        int a = 1;
+        int b = 2;
+        if (a <= b) {
+            System.out.println("a is less than or equal to b");
+        }
+    }
+
+    public static void func2() {
+        int c = 3;
+        int d = 4;
+
+        if (c >= d) {
+            System.out.println("c is greater than or equal to d");
+        }
+        if (c <= d) {
+            System.out.println("c is less than or equal to d");
+        }
+        if (c < d) {
+            System.out.println("c is less than d");
+        }
+        if (c > d) {
+            System.out.println("c is greater than d");
+        }
+        if (c != d) {
+            System.out.println("c is not equal to d");
+        }
+        if (c == d) {
+            System.out.println("c is equal to d");
+        }
+    }
+    """
+The entry_point is 'func2', you should transform arithmetic logic to equivalent arithmetic logic in the function 'func2'. The rephrased code should be like:
+"""
+    public static void func1() {
+        int a = 1;
+        int b = 2;
+        if (a <= b) {
+            System.out.println("a is less than or equal to b");
+        }
+    }
+
+    public static void func2() {
+        int c = 3;
+        int d = 4;
+        
+        if (!(c < d)) {
+            System.out.println("c is greater than or equal to d");
+        }
+        if (!(c > d)) {
+            System.out.println("c is less than or equal to d");
+        }
+        if (!(c >= d)) {
+            System.out.println("c is less than d");
+        }
+        if (!(c <= d)) {
+            System.out.println("c is greater than d");
+        }
+        if (!(c == d)) {
+            System.out.println("c is not equal to d");
+        }
+        if (!(c != d)) {
+            System.out.println("c is equal to d");
+        }
+    }
+        """

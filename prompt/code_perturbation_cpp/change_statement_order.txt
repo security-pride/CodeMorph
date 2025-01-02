@@ -1,0 +1,40 @@
+if two adjacent statements has no shared variable with each other, you should change the order of the statements. 
+
+The example in cpp is as follows, you should adapt it to the programming language of the given code.
+For example, in a python code snippet with two functions:
+"""
+#include <iostream>
+
+void func1() {
+    int a = 1;
+    int b = 2;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+}
+
+void func2() {
+    int c = 3;
+    int d = 4;
+    std::cout << c << std::endl;
+    std::cout << d << std::endl;
+}
+"""
+The entry_point is 'func2', you should change the order of the statements in the function 'func2'. The rephrased code should be like:
+"""
+#include <iostream>
+
+void func1() {
+    int a = 1;
+    int b = 2;
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+}
+
+void func2() {
+    int d = 4;
+    int c = 3;
+    std::cout << c << std::endl;
+    std::cout << d << std::endl;
+}
+"""
+That, the order of the statements 'c = 3' and 'd = 4' is changed.

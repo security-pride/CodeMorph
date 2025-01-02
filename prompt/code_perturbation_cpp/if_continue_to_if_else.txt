@@ -1,0 +1,66 @@
+you should transform 'if' then 'continue' to 'if else'. You can use other placeholders to represent a do-nothing functionality to replace 'continue' such as "pass" in python, {} in C++, etc. I will give you the pseudocode to introduce the transformation rule in python, you should adapt it to the programming language of the given code.
+
+Transformation rule:
+The 'if' then 'continue' pseudocode is as:
+"""
+if (condition){
+    bodyA
+    continue
+}
+bodyB
+"""
+Then you should change it into 'if else', the pseudocode is as:
+"""
+if (condition) {
+    bodyA
+    {}
+} else {
+    bodyB
+}
+"""
+
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+
+void func1() {
+    for (int i = 0; i < 5; ++i) {
+        if (i == 3) {
+            continue;
+        }
+        std::cout << i << std::endl;
+    }
+}
+
+void func2() {
+    for (int j = 0; j < 3; ++j) {
+        if (j == 2) {
+            continue;
+        }
+        std::cout << j << std::endl;
+    }
+}
+"""
+The entry_point is 'func2', you should transform the if then continue statement to if else in the function 'func2'. The rephrased code should be like:
+"""
+#include <iostream>
+
+void func1() {
+    for (int i = 0; i < 5; ++i) {
+        if (i == 3) {
+            continue;
+        }
+        std::cout << i << std::endl;
+    }
+}
+
+void func2() {
+    for (int j = 0; j < 3; ++j) {
+        if (j == 2) {
+            {}
+        } else {
+            std::cout << j << std::endl;
+        }
+    }
+}
+"""

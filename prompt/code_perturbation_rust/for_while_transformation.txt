@@ -1,0 +1,75 @@
+please transform for loop to 'while' loop and while loop to 'for' loop. You should transform all the loops in the function. In Python and Rust, do not change the unlimited loop such as 'while true','while 1'.
+
+The transformation rule with pseudocode is in rust, you should adapt it to the programming language of the given code:
+1. for loop to while loop:
+The for loop to while loop transformation should be like:
+"""
+for i in 0..n {
+    body
+}
+"""
+After transformation, the pseudocode should be like:
+"""
+let mut i = 0;
+while i < n {
+    body
+    i += 1;
+}
+"""
+2. while loop to for loop:
+The while loop to for loop transformation should be like:
+"""
+let mut i = 0;
+while i < n {
+    body
+    i += 1;
+}
+"""
+After transformation, the pseudocode should be like:
+"""
+for i in 0..n {
+    body
+}
+"""
+For example, in a rust code snippet with two functions:
+"""
+fn fun1() {
+    for i in 0..5 {
+        println!("{}", i);
+    }
+}
+
+fn fun2() {
+    let mut i = 0;
+    loop {
+        println!("{}", i);
+        i += 1;
+    }
+
+    for j in 0..5 {
+        println!("{}", j);
+    }
+}
+"""
+The entry_point is 'fun2', you should transform the loops of the function 'fun2'. The rephrased code should be like:
+"""
+fn func1() {
+    for i in 0..5 {
+        println!("{}", i);
+    }
+}
+
+fn func2() {
+    let mut i = 0; 
+    loop {
+        println!("{}", i);
+        i += 1; 
+    }
+
+    let mut j = 0; 
+    while j < 5 {
+        println!("{}", j);
+        j += 1; 
+    }
+}
+"""

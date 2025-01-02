@@ -1,0 +1,36 @@
+you should wrap the statements with if or for statement. The format in rust is as follows, you should adapt it to the programming language of the given code.
+As a statement 'target_statement' in the code snippet:
+1. The wrapping rule with if statement is:
+if true{
+    target_statement
+}
+    
+    
+2. The wrapping rule with for statement is:
+for i in 0..1 {
+    target_statement
+}
+
+For example, in a rust code snippet with two functions:
+"""
+fn func1() {
+    println!("Hello World");
+}
+
+fn func2() {
+    println!("Hello World");
+}
+"""
+
+The entry_point is "func2", you should wrap the statements with if or while or for statement in the function "func2". The rephrased code can be:
+"""
+fn func1() {
+    println!("Hello World");
+}
+
+fn func2() {
+    for _ in 0..1 {
+        println!("Hello World");
+    }
+}
+"""

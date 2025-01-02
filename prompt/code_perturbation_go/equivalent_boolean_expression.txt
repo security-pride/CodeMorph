@@ -1,0 +1,82 @@
+you should swap the sides of the boolean expression which are"<", ">", "==", "<=", ">=". The boolean expression may be contained in the if statement, while statement, or any other statement. You must follow the change rule to swap the sides of the boolean expression.
+
+The change rule is as follows using the pseudocode, you should adapt it to the programming language of the given code.:
+1. var1 > var2 should be transformed to var2 < var1
+2. var1 >= var2 should be transformed to var2 <= var1
+3. var1 == var2 should be transformed to var2 == var1
+4. var1 <= var2 should be transformed to var2 >= var1
+5. var1 < var2 should be transformed to var2 > var1
+6. var1 != var2 should be transformed to var2 != var1
+
+For example, in a go code snippet with two functions:
+"""
+import (
+    "fmt"
+)
+
+func func1() {
+    a := 5
+    b := 10
+    if a > b {
+        fmt.Println("a is greater than b")
+    } else {
+        fmt.Println("b is greater than a")
+    }
+}
+
+func func2() {
+    c := 5
+    d := 10
+
+    if c == d {
+        fmt.Println("c is equal to d")
+    }
+    if c >= 0 {
+        fmt.Println("c is greater than or equal to 0")
+    }
+
+    for d != c {
+        i := 5
+        for i < 10 {
+            i++
+        }
+        d-- 
+    }
+}
+   """ 
+The entry_point is 'func2', you should change the boolean expression in the function 'func2'.  The rephrased code should be like:
+"""
+import (
+    "fmt"
+)
+
+func func1() {
+    a := 5
+    b := 10
+    if a > b {
+        fmt.Println("a is greater than b")
+    } else {
+        fmt.Println("b is greater than a")
+    }
+}
+
+func func2() {
+    c := 5
+    d := 10
+
+    if d == c {
+        fmt.Println("c is equal to d")
+    }
+    if c >= 0 {
+        fmt.Println("c is greater than or equal to 0")
+    }
+
+    for c != d {
+        i := 5
+        for i < 10 {
+            i++
+        }
+        d--
+    }
+}
+"""

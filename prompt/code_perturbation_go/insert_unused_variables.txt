@@ -1,0 +1,39 @@
+you should insert unused variables. The added unused variables should not appear in the original function. The name of the unused variables should include 'importantVar'.
+
+The example in go is as follows, you should adapt it to the programming language of the given code.
+For example, in a go code snippet with two functions:
+
+"""
+func func1() int {
+    a := 5
+    return a
+}
+
+func func2() int {
+    b := 10
+    fmt.Println(b)
+    c := b + 1
+    return c
+}
+"""
+
+The entry_point is 'func2', you should insert junk code in the function 'func2'. The rephrased code can be:
+
+"""
+func func1() int {
+    a := 5
+    return a
+}
+
+func func2() int {
+    b := 10
+
+    importantVar1 := 0
+    importantVar2 := []int{1, 2, 3}
+
+    fmt.Println(b)
+    c := b + 1
+    return c
+}
+"""
+That variable 'importantVar1' and 'importantVar2' are not used in the code.

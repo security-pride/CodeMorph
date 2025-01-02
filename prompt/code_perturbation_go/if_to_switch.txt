@@ -1,0 +1,73 @@
+you should transfor 'if-else' statement to the 'switch' or 'match' statement. The method in go is as follows, you should adapt it to the language of the given code:
+1. For 'if' statement:
+If the original code is:
+"""
+    if condition1() {
+        return 1
+    } else if condition2() {
+        return 2
+    } else {
+        return 3
+    }
+    """
+2. Extract the conditions and codes as a function defined before the given function, and named the function with a confused name that does not reveal the purpose of the function:
+"""
+func confusedFunc(param1 int, param2 int, param3 int) int {
+    if condition1() {
+        return 1
+    } else if condition2() {
+        return 2
+    } else {
+        return 3
+    }
+}
+        """
+3. Replace the 'if-else' statement with the 'switch' or 'match' statement:
+"""
+switch confusedFunc(param1, param2, param3) {
+case 1:
+    code1()
+case 2:
+    code2()
+default:
+    code3()
+}
+        """
+
+The simple example of the transformation is as follows:
+1. Original code:
+"""
+func func(x int) int {
+    if x > 0 {
+        return 1
+    } else if x < 0 {
+        return -1
+    } else {
+        return 0
+    }
+}
+"""
+2. Transformed code:
+"""
+
+func confusedFunc(x int) int {
+    if x > 0 {
+        return 1
+    } else if x < 0 {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+func func(x int) int {
+    switch confusedFunc(x) {
+    case 1:
+        return 1
+    case -1:
+        return -1
+    default:
+        return 0
+    }
+}
+"""

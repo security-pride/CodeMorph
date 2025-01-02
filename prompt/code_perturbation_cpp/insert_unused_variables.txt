@@ -1,0 +1,44 @@
+you should insert unused variables. The added unused variables should not appear in the original function. The name of the unused variables should include 'important_var'.
+
+The example in cpp is as follows, you should adapt it to the programming language of the given code.
+For example, in a cpp code snippet with two functions:
+
+"""
+#include <iostream>
+
+int func1() {
+    int a = 5;
+    return a;
+}
+
+int func2() {
+    int b = 10;
+    std::cout << b << std::endl;
+    int c = b + 1;
+    return c;
+}
+"""
+
+The entry_point is 'func2', you should insert junk code in the function 'func2'. The rephrased code can be:
+
+"""
+#include <iostream>
+#include <vector>
+
+int func1() {
+    int a = 5;
+    return a;
+}
+
+int func2() {
+    int b = 10;
+
+    int important_var1 = 0; 
+    std::vector<int> important_var2 = {1, 2, 3};
+
+    std::cout << b << std::endl;
+    int c = b + 1;
+    return c;
+}
+"""
+That variable 'important_var1' and 'important_var2' are not used in the code.

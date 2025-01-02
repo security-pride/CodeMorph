@@ -1,0 +1,77 @@
+you should extract methods from 'if' statement. The following explains the rules to extract the method from the 'if' statement which is in cpp, you should adapt it to the programming language of the given code:
+The 'if' statement in the cpp is as:
+"""
+void func() {
+    if (conditionA) {
+        bodyA
+    } else {
+        bodyB
+    }
+}
+"""
+We assume that there are variables x and y in the conditionA expression, then you should change the code into:
+"""
+bool random_name(int a, int b) {
+    return conditionA;
+}
+
+void func() {
+    if (random_name(x, y)) {
+        bodyA
+    } else {
+        bodyB
+    }
+}
+"""
+Note that, the arguments name of the extracted method should be different from the variables in the conditionA expression. The name of the extracted method should be confused that it is not clear what the method does.
+
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+#include <string>
+
+int func1() {
+    int a = 1;
+    return a;
+}
+
+void func2() {
+    int a = 10;
+    int b = 2;
+    std::string c = "It is a string";
+
+    if ((a % 2 != 0) && (b > 2) && (!c.empty())) {
+        std::cout << "Hello World" << std::endl;
+    } else {
+        std::cout << "Goodbye World" << std::endl;
+    }
+}
+
+"""
+The entry_point is 'func2', you should extract the method from the if statement in the function 'func2'. Assuming the extracted method name is do_computation, the rephrased code can be like:
+
+"""
+#include <iostream>
+#include <string>
+
+int func1() {
+    int a = 1;
+    return a;
+}
+
+bool random_name(int x, int y, const std::string& z) {
+    return (x % 2 != 0) && (y > 2) && (!z.empty());
+}
+
+void func2() {
+    int a = 10;
+    int b = 2;
+    std::string c = "It is a string";
+
+    if (random_name(a, b, c)) {
+        std::cout << "Hello World" << std::endl;
+    } else {
+        std::cout << "Goodbye World" << std::endl;
+    }
+}
+"""

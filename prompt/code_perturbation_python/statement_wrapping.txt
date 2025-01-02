@@ -1,0 +1,27 @@
+you should wrap the statements with if or for statement. The format in python is as follows, you should adapt it to the programming language of the given code.
+As a statement 'target_statement' in the code snippet:
+1. The wrapping rule with if statement is:
+if true:
+    target_statement
+    
+2. The wrapping rule with for statement is:
+for i in range(1):
+    target_statement
+
+For example, in a python code snippet with two functions:
+"""
+def func1():
+    print("Hello World")
+
+def func2():
+    print("Hello World")
+"""
+
+The entry_point is "func2", you should wrap the statements with if or while or for statement in the function "func2". The rephrased code can be:
+"""
+def func1():
+    print("Hello World")
+def func2():
+    for i in range(1):
+        print("Hello World")
+"""

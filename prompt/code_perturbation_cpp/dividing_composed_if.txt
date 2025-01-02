@@ -1,0 +1,66 @@
+You should divide the composed if statement. If the if statement is composed, you should divide it into multiple if statements.
+
+The format in cpp is as follows, you should adapt it to the programming language of the given code.
+The divide rule with pseudocode:
+1. conditionA and conditionB:
+"""
+if (conditionA && conditionB) {
+    body
+}
+"""
+Then you should divide it into:
+"""
+if (conditionA) {
+    if (conditionB) {
+        body
+    }
+}
+        """
+2. conditionA or conditionB:
+"""
+if (conditionA || conditionB) {
+    body
+}
+"""
+Then you should divide it into:
+"""
+if (conditionA) {
+    body
+} else if (conditionB) {
+    body
+}
+"""
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+
+void func1() {
+    if (a > 0 && b > 0) {
+        std::cout << "Hello World" << std::endl;
+    }
+}
+
+void func2() {
+    if (d > 0 && e > 0) {
+        std::cout << "Hello World" << std::endl;
+    }
+}
+        """
+The entry_point is "func2", you should divide the composed if statement in the function "func2". The rephrased code can be:
+"""
+#include <iostream>
+
+void func1() {
+    if (a > 0 && b > 0) {
+        std::cout << "Hello World" << std::endl;
+    }
+}
+
+void func2() {
+    if (d > 0) {
+        if (e > 0) {
+            std::cout << "Hello World" << std::endl;
+        }
+    }
+}
+            """

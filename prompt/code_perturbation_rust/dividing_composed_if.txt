@@ -1,0 +1,61 @@
+You should divide the composed if statement. If the if statement is composed, you should divide it into multiple if statements.
+
+The format in rust is as follows, you should adapt it to the programming language of the given code.
+The divide rule with pseudocode:
+1. conditionA and conditionB:
+"""
+if condition_a && condition_b {
+     body
+}
+"""
+Then you should divide it into:
+"""
+if condition_a {
+    if condition_b {
+        body
+    }
+}
+        """
+2. conditionA or conditionB:
+"""
+if condition_a || condition_b {
+     body
+}
+    """
+Then you should divide it into:
+"""
+if condition_a {
+    body
+} else if condition_b {
+    body
+}
+"""
+For example, in a rust code snippet with two functions:
+"""
+fn func1() {
+    if a > 0 && b > 0 {
+        println!("Hello World");
+    }
+}
+fn func2() {
+    if d > 0 && e > 0 {
+        println!("Hello World");
+    }
+}
+        """
+The entry_point is "func2", you should divide the composed if statement in the function "func2". The rephrased code can be:
+"""
+fn func1() {
+    if a > 0 && b > 0 {
+        println!("Hello World");
+    }
+}
+
+fn func2() {
+    if d > 0 {
+        if e > 0 {
+            println!("Hello World");
+        }
+    }
+}
+            """

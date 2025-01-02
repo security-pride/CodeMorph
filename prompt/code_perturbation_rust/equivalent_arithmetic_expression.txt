@@ -1,0 +1,35 @@
+you should change the arithmetic computation or arithmetic assignment equivalently by adding and then minusing the same type number in the arithmetic expression such as "+ 3 -3". Note that, you can only change the arithmetic computation or arithmetic assignment which like 'a = 4', 'a = 5*3', 'b = 4.3', 'a = 6/2', 'a = 4 - 3' that only includes numeric constants.
+
+The example in rust is as follows, you should adapt it to the programming language of the given code.
+For example, in a rust code snippet with two functions:
+"""
+fn func1() -> i32 {
+    let a = 5;
+    a 
+}
+
+fn func2() {
+    let b = 10;
+    let c = 5.1;
+    let d = func1(); 
+
+    println!("{}", b); 
+    println!("{}", c); 
+}
+"""
+The entry_point is 'func2', you should change the arithmetic expression in the function 'func2'. In 'func2', the variable 'b' is equivalent 10, and you can add 3 and minus 3 to 'b'.  The rephrased code can be like:
+"""
+fn func1() -> i32 {
+    let a = 5;
+    a 
+}
+
+fn func2() {
+    let b = 10 + 3 - 3; 
+    let c = 5.1 + 1.0 - 1.0; 
+    let d = func1(); 
+
+    println!("{}", b); 
+    println!("{}", c); 
+}
+"""

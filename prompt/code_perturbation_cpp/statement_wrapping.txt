@@ -1,0 +1,39 @@
+you should wrap the statements with if or for statement. The format in cpp is as follows, you should adapt it to the programming language of the given code.
+As a statement 'target_statement' in the code snippet:
+1. The wrapping rule with if statement is:
+if (true) {
+    target_statement;
+}
+    
+2. The wrapping rule with for statement is:
+for (int i(0); i < 1; i++) {
+    target_statement;
+}
+
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+
+void func1() {
+    std::cout << "Hello World" << std::endl;
+}
+
+void func2() {
+    std::cout << "Hello World" << std::endl;
+}
+"""
+
+The entry_point is "func2", you should wrap the statements with if or while or for statement in the function "func2". The rephrased code can be:
+"""
+#include <iostream>
+
+void func1() {
+    std::cout << "Hello World" << std::endl;
+}
+
+void func2() {
+    for (int i = 0; i < 1; ++i) {
+        std::cout << "Hello World" << std::endl;
+    }
+}
+"""

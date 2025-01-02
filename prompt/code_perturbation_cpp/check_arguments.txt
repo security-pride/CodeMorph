@@ -1,0 +1,33 @@
+you should check if the arguments is empty. If it is null, just print "Warning: Check the inputs" to the console, don't add any other code. 
+
+The example in cpp is as follows, you should adapt it to the programming language of the given code.
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+#include <string>
+
+void func1() {
+    std::cout << "Hello World" << std::endl;
+}
+
+void func2(const std::string& s) {
+    std::cout << s << std::endl;
+}
+"""
+The entry_point is "func2", you should check if the arguments is empty in the function "func2". The rephrased code should be:
+"""
+#include <iostream>
+#include <string>
+
+void func1() {
+    std::cout << "Hello World" << std::endl;
+}
+
+void func2(const std::string& s) {
+    if (!s.size()) {
+        std::cout << "Warning: Check the inputs" << std::endl;
+    } else {
+        std::cout << s << std::endl;
+    }
+}
+"""

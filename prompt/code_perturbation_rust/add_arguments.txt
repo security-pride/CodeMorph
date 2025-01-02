@@ -1,0 +1,33 @@
+you should add unused arguments to the function signature. The type, number of the added arguments can be arbitrary. The name of arguments should include 'funcarg'.
+
+Note that. 1. You should make sure the added arguments are appended after the existing arguments and they are all unused. 2. You should not add default arguments to the entry_point function unless unless the given code is python or cpp. 3. You should check the code, when the function is called, you should assign the random value in the function call according to the type of the arguments.
+
+The format in rust is as follows, you should adapt it to the programming language of the given code.
+For example, in a rust code snippet with two functions:
+"""
+fn func1() {
+    let s := "It is a string"
+    func2(s)
+    println!("Hello World");
+}
+
+fn func2(s: &str) {
+    println!("{}", s);
+}
+"""
+The entry_point is "func2", you should add unused default arguments to the function "func2". The rephrased code should be:
+"""
+fn func1() {
+    let s := "It is a string"
+    let important_value1 = "It is also a string";
+    let important_value2 = vec![1, 2, 3]; 
+    func2(s, 2, 0.5, important_value1, &important_value2)
+    println!("Hello World");
+}
+
+fn func2(s: &str, funcarg1: i32, funcarg2: f64, funcarg3: &str, funcarg4: &Vec<i32>) {
+    println!("{}", s);
+}
+"""
+The number of arguments of function "func2" has been added, and the funtion call of "func2" in the function "func1" also assigned the random value of adding arguments funcarg1, funcarg2 , funcarg3 and funcarg4
+

@@ -1,0 +1,61 @@
+you should transfor 'if-else' statement to the 'switch' or 'match' statement. The method in python is as follows, you should adapt it to the language of the given code:
+1. For 'if' statement:
+If the original code is:
+"""
+if condition1:
+    code1
+elif condition2:
+    code2
+else:
+    code3
+    """
+2. Extract the conditions and codes as a function defined before the given function, and named the function with a confused name that does not reveal the purpose of the function:
+"""
+def confused_func(param1, param2, param3):
+    if condtion1:
+        return 1
+    elif condition2:
+        return 2
+    else:
+        return 3
+        """
+3. Replace the 'if-else' statement with the 'switch' or 'match' statement:
+"""
+match (confused_func(param1, param2, param3)):
+    case 1:
+        code1
+    case 2:
+        code2  
+    default:
+        code3
+        """
+
+The simple example of the transformation is as follows:
+1. Original code:
+"""
+def func(x):
+    if x > 0:
+        return 1
+    elif x < 0:
+        return -1
+    else:
+        return 0
+"""
+2. Transformed code:
+"""
+def confused_func(x):
+    if x > 0:
+        return 1
+    elif x < 0:
+        return -1
+    else:
+        return 0
+def func(x):
+    match (confused_func(x)):
+        case 1:
+            return 1
+        case -1:
+            return -1
+        default:
+            return 0
+"""

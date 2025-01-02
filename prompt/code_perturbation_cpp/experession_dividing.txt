@@ -1,0 +1,44 @@
+you should infix experession dividing. If the experession is as: variable1 = variable2 op1 variable3 op2 variable4, and the priority of op2 is higher than or equal to that of op1, you should change it as: temp_variable = variable3 op variable4; variable1 = variable2 op temp_variable. You should name the temp_variable with a confused name that don't indicate that this is a temporary variable.
+
+The example in cpp is as follows, you should adapt it to the programming language of the given code.
+For example, in a cpp code snippet with two functions:
+"""
+#include <iostream>
+
+void func1() {
+    double b = 1.0; 
+    double c = 2.0; 
+    double d = 3.0; 
+    double a = b + (c / d);
+    std::cout << a << std::endl;
+}
+
+void func2() {
+    double f = 4.0; 
+    double g = 5.0; 
+    double h = 6.0; 
+    double e = (f / g) + h;
+    std::cout << e << std::endl;
+}
+"""
+The entry_point is 'func2', you should infix experession dividing in the function 'func2'. The rephrased code should be like:
+"""
+#include <iostream>
+
+void func1() {
+    double b = 1.0; 
+    double c = 2.0; 
+    double d = 3.0; 
+    double a = b + (c / d);
+    std::cout << a << std::endl;
+}
+
+void func2() {
+    double f = 4.0; 
+    double g = 5.0; 
+    double h = 6.0; 
+    double z = f / g;
+    double e = z + h;
+    std::cout << e << std::endl;
+}
+"""

@@ -1,0 +1,72 @@
+please transform "match" structure to "if" statement. The format is as follows, you should adapt it to the programming language of the given code.
+The "match" structure to "if" statement transformation should be like:
+"""
+match value {
+    condition1 => {
+         body1
+    }
+    condition2 => {
+         body2
+    }
+    _ => {
+         body3
+    }
+}
+
+"""
+
+After transformation, the pseudocode should be like:
+"""
+if value == condition1 {
+    body1
+} else if value == condition2 {
+    body2
+} else {
+    body3
+}
+"""
+
+
+For example, in a rust code snippet with two functions:
+"""
+fn func1() {
+    let a = 1;
+    if a == 1 {
+        println!("Hello World");
+    } else {
+        println!("Goodbye World");
+    }
+}
+
+fn func2() {
+    let value = 1;
+    match value {
+        1 => println!("One"),
+        2 => println!("Two"),
+        _ => println!("Invalid"),
+    }
+}
+"""
+
+entry_point is 'func2', you should transform the code in the function 'func2'. The rephrased code should be like:
+"""
+fn func1() {
+    let a = 1;
+    if a == 1 {
+        println!("Hello World");
+    } else {
+        println!("Goodbye World");
+    }
+}
+
+fn func2() {
+    let value = 1;
+    if value == 1 {
+        println!("One");
+    } else if value == 2 {
+        println!("Two");
+    } else {
+        println!("Invalid");
+    }
+}
+"""
