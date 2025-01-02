@@ -38,7 +38,7 @@ Prepare a JSONL file containing the code to be perturbed, with each line formatt
 
 ## Running the Tool
    ```bash
-   python -m CODEMORPH.codemorph \
+   python -m CodeMorph.codemorph \
        --lang python \  # required parameter; choose from [python, c, cpp, rust, java, go]
        --file ./example.jsonl \  # required parameter; a JSONL file
        --mi 15 \  # maximum iterations (default: 15)
