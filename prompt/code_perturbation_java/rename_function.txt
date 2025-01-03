@@ -18,7 +18,7 @@ if the original code is:
     }
 """
 
-The entry_point is "func2", assuming the new function name is "addition", the places where the function is called also should be modified, you should check that the all code to modify the name. So we the rephrased code should be:
+The entry_point is "func2", assuming the new function name is "confusedName", the places where the function is called also should be modified, you should check that the all code to modify the name. So we the rephrased code should be:
 
 """
     public static void func1() {
