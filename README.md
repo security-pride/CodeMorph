@@ -49,3 +49,16 @@ Prepare a JSONL file containing the code to be perturbed, with each line formatt
 This command runs CodeMorph with the specified language and code file, setting the maximum number of iterations (`--mi`), similarity threshold (`--st`), and temperature for selection (`--temper`).
 
 To adjust the weights of $s_1$ and $s_2$, modify the `compose_similarity_score` function in **similarity_computation.py**.
+
+# Citation
+
+If you reference our work or use our tools, the reference information is as follows:
+
+```bibtex
+@article{author:2025,  
+  author = {Hongzhou, Rao. and Yanjie, Zhao. and Wenjie, Zhu. and Ling, Xiao. and Meizhen, Wang. and Haoyu, Wang.},  
+  title = {CodeMorph: Mitigating Data Leakage in Large Language Model Assessment},  
+  journal = {Proceedings of the 2025 IEEE/ACM 47th International Conference on Software Engineering: Companion Proceedings},
+  status = {Accepted},  
+  year = {2024}  
+}
