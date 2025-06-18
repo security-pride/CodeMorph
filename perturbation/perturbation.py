@@ -187,7 +187,7 @@ def perturbation(lang, code_file, max_iter, similarity_threshold, temperature):
                                                 )
                 if rephrase_sample:
                     similarity_score = compose_similarity_score(original_code, rephrase_sample['code'], lang)
-                    if similarity_score == -1.0:
+                    if similarity_score == -1:
                         print(f"Error in calculating the score, method: {method}, sample: {rephrase_sample['task_id']}, code: {rephrase_sample['code']}")
                         similarity_score = 1
                     else:
@@ -205,7 +205,7 @@ def perturbation(lang, code_file, max_iter, similarity_threshold, temperature):
                                 "similarity_score": similarity_score,
                                 'mini_similarity_score': mini_similarity_score,
                                 "sample": rephrase_sample['task_id'],
-                                "error": similarity_score == -1.0
+                                "error": similarity_score == -1
                             }) + ',\n')
 
 
@@ -238,13 +238,13 @@ def perturbation(lang, code_file, max_iter, similarity_threshold, temperature):
                                 "similarity_score": similarity_score,
                                 'mini_similarity_score': mini_similarity_score,
                                 "sample": rephrase_sample['task_id'],
-                                "error": similarity_score == -1.0,
+                                "error": similarity_score == -1,
                                 'iter': iter_count
                             }) + ',\n')
 
 
                     og = 0
-                    if similarity_score == -1.0:
+                    if similarity_score == -1:
                         similarity_score = 1
                         rephrase_sample = {}
 
@@ -308,11 +308,11 @@ def perturbation(lang, code_file, max_iter, similarity_threshold, temperature):
                             "similarity_score": similarity_score,
                             'mini_similarity_score': mini_similarity_score,
                             "sample": rephrase_sample['task_id'],
-                            "error": similarity_score == -1.0,
+                            "error": similarity_score == -1,
                             'iter': iter_count
                         }) + ',\n')
 
-                    if similarity_score == -1.0:
+                    if similarity_score == -1:
                         similarity_score = 1
                         rephrase_sample = {}
                     elif similarity_score <= mini_similarity_score:

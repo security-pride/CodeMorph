@@ -170,5 +170,5 @@ def compose_similarity_score(original_code, rephrase_code, lang):
 
         return round(max_score * nu + surface_score * mu, 4)
     
-    return -1.0
+    return -1
     
